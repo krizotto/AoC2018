@@ -4,10 +4,9 @@ import re
 
 def process(claim: str):
     returnlist = []
-    claim_id, x, y, range_x, range_y = list(
-        filter(None, re.split("  | |@|,|:|x", claim))
-    )
-    x, y, range_x, range_y = int(x), int(y), int(range_x), int(range_y)
+    claim_id, x, y, range_x, range_y = [
+        int(num) for num in list(filter(None, re.split("#|  | |@|,|:|x", claim)))
+    ]
     for i in range(range_x):
         for j in range(range_y):
             returnlist.append((x + i, y + j))
