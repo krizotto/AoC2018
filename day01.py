@@ -1,4 +1,4 @@
-day1_input = [int(x) for x in open("day01.txt", "r")]
+day1_input = [int(x) for x in open("data/day01.txt", "r")]
 # PART 1
 print(sum(day1_input))
 
